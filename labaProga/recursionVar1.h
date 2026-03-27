@@ -16,8 +16,8 @@ class Test : public QObject
     Q_PROPERTY(int cnt READ cnt NOTIFY cntChanged)
 public:
     explicit Test(QObject *parent = nullptr);
-    long long int result() const {return m_result;}
-    long long int callCnt() const {return m_callCnt;}
+    int result() const {return m_result;}
+    int callCnt() const {return m_callCnt;}
     int cnt() const {return m_cnt;}
 
 
@@ -38,10 +38,10 @@ signals:
 private:
     uint32_t time = 0;
     int index = 0;
-    long long int recursionFuncVar1(int n);
-    long long int recursionFuncVar2(int n);
-    long long int m_result;
-    long long int m_callCnt;
+    int recursionFuncVar1(int n);
+    int recursionFuncVar2(int n);
+    int m_result;
+    int m_callCnt;
     int m_cnt;
 
 

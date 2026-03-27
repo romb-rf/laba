@@ -45,7 +45,7 @@ void Test::reset(){
     emit resultChanged();
     emit callCntChanged();
 }
-long long int Test::recursionFuncVar1(int n)
+int Test::recursionFuncVar1(int n)
 {
 
     m_callCnt++;
@@ -62,7 +62,7 @@ long long int Test::recursionFuncVar1(int n)
 
     return 0;
 }
-long long int Test::recursionFuncVar2(int n)
+int Test::recursionFuncVar2(int n)
 {
 
     m_callCnt++;

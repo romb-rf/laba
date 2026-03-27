@@ -25,7 +25,10 @@ bool IntValidator::checkInt(const QString &str)
         bool ok;
         int value = str.toInt(&ok);
         if (!ok) {
-            throw std::invalid_argument("String is not a valid integer: " + str.toStdString());
+            throw std::invalid_argument("Строка не является целым числом: " + str.toStdString());
+        }
+        if (value < 0 || value > 81) {
+            throw std::out_of_range("Значение должно быть в диапазоне 0 < n < 81");
         }
         return true;
     } catch (const std::invalid_argument &e) {
@@ -34,7 +37,7 @@ bool IntValidator::checkInt(const QString &str)
         emit lastErrorChanged();
         return false;
     } catch (const std::exception &e) {
-        m_lastError = QString("Exception: %1").arg(e.what());
+        m_lastError = QString("ОШИБКА: %1").arg(e.what());
         emit errorOccurred(m_lastError);
         emit lastErrorChanged();
         return false;
