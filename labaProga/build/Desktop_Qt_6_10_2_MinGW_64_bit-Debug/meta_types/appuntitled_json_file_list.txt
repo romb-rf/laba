@@ -1,0 +1,4 @@
+D:/laba/untitled/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/appuntitled_autogen/include/../EWIEGA46WW/moc_datamanager.cpp.json
+D:/laba/untitled/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/appuntitled_autogen/include/../EWIEGA46WW/moc_intvalidator.cpp.json
+D:/laba/untitled/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/appuntitled_autogen/include/../EWIEGA46WW/moc_iteration.cpp.json
+D:/laba/untitled/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/appuntitled_autogen/include/../EWIEGA46WW/moc_recursionVar1.cpp.json

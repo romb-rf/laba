@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/qt/qml/untitled/">
+    <file alias="Main.qml">D:/laba/untitled/Main.qml</file>
+    <file alias="CastomButton.qml">D:/laba/untitled/CastomButton.qml</file>
+    <file alias="OutRes.qml">D:/laba/untitled/OutRes.qml</file>
+  </qresource>
+</RCC>
+
