@@ -5,23 +5,15 @@
 using namespace std;
 Iteration::Iteration(QObject *parent):QObject(parent), m_result(0), m_callCnt(0), index(0), m_cnt(0) {
 }
-
 void Iteration::onComboIndexChanged(int indexInp){
-
     index = indexInp;
-
 }
 void Iteration::calculate(int n){
-
     auto start = std::chrono::high_resolution_clock::now();
     switch (index) {
     case 0:
-
         m_result = iterationFuncVar1(n);
-
-
         break;
-
     case 1:
         m_result = iterationFuncVar2(n);
         break;
@@ -31,9 +23,6 @@ void Iteration::calculate(int n){
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = end - start;
     m_cnt = std::chrono::duration_cast<std::chrono::nanoseconds>(duration).count();
-
-
-
     emit resultChanged();
     emit callCntChanged();
     emit cntChanged();
@@ -51,17 +40,13 @@ int Iteration::iterationFuncVar1(int n)
         m_callCnt = 0;
         return 1;
     }
-
-
     int prev = 3;
     if (n == 2) {
         m_callCnt = 0;
         return prev;
     }
-
     int result = 0;
     m_callCnt = 0;
-
     for (int i = 3; i <= n; ++i) {
         if (i % 2 == 0) {
             result = 3 * prev;
@@ -71,10 +56,7 @@ int Iteration::iterationFuncVar1(int n)
         prev = result;
         m_callCnt++;
     }
-
     return result;
-
-
 }
 int Iteration::iterationFuncVar2(int n)
 {
@@ -86,14 +68,10 @@ int Iteration::iterationFuncVar2(int n)
         m_callCnt = 0;
         return 2;
     }
-
-
     vector<int> f(n + 1);
+    m_callCnt = 0;
     f[1] = 1;
     f[2] = 2;
-
-    m_callCnt = 0;
-
     for (int i = 3; i <= n; ++i) {
         if (i % 2 == 0) {
             f[i] = int((7 * i + f[i - 3]) / 9);
@@ -102,6 +80,5 @@ int Iteration::iterationFuncVar2(int n)
         }
         ++m_callCnt;
     }
-
     return f[n];
 }

@@ -1,22 +1,17 @@
 #include "intvalidator.h"
 #include <QDebug>
 #include <stdexcept>
-
 IntValidator::IntValidator(QObject *parent)
     : QObject(parent)
-{
-}
-
+{}
 QString IntValidator::lastError() const
 {
     return m_lastError;
 }
 void IntValidator::clearError()
 {
-
     m_lastError.clear();
     emit lastErrorChanged();
-
 }
 bool IntValidator::checkInt(const QString &str)
 {

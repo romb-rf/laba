@@ -1,11 +1,7 @@
 #include "doptask.h"
 #include <vector>
 #include <QString>
-
-DopTask::DopTask(QObject *parent) : QObject(parent), m_res("")
-{
-}
-
+DopTask::DopTask(QObject *parent) : QObject(parent), m_res(""){}
 void DopTask::calculate(int n)
 {
     std::vector<int> div;
@@ -23,15 +19,11 @@ void DopTask::calculate(int n)
     if (temp > 1) {
         div.push_back(temp);
     }
-
-
     QString result;
     for (size_t i = 0; i < div.size(); ++i) {
         if (i != 0) result += " ";
         result += QString::number(div[i]);
     }
-
-
     if (m_res != result) {
         m_res = result;
         emit resChanged();

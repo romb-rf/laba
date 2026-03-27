@@ -1,16 +1,12 @@
 #ifndef RECURSIONVAR1_H
 #define RECURSIONVAR1_H
 #include <Qobject>
-
 #include <QDebug>
-
 using namespace std;
 
 class Test : public QObject
 {
     Q_OBJECT
-
-
     Q_PROPERTY(int result READ result NOTIFY resultChanged)
     Q_PROPERTY(int callCnt READ callCnt NOTIFY callCntChanged)
     Q_PROPERTY(int cnt READ cnt NOTIFY cntChanged)
@@ -20,15 +16,12 @@ public:
     int callCnt() const {return m_callCnt;}
     int cnt() const {return m_cnt;}
 
-
 public slots:
     void onComboIndexChanged(int n);
     void calculate(int n);
     void reset();
 
 signals:
-
-
     void resultChanged();
     void callCntChanged();
     void cntChanged();
@@ -43,8 +36,6 @@ private:
     int m_result;
     int m_callCnt;
     int m_cnt;
-
-
 };
 
 #endif
