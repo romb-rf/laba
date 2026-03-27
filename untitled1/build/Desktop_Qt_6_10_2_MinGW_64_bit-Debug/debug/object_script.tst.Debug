@@ -1,0 +1,14 @@
+debug/gtest-all.o
+debug/main.o
+debug/tst.o
+debug/recursionVar1.o
+debug/iteration.o
+debug/datamanager.o
+debug/doptask.o
+debug/tst1.o
+debug/tst2.o
+debug/tst3.o
+debug/moc_recursionVar1.o
+debug/moc_datamanager.o
+debug/moc_doptask.o
+debug/moc_iteration.o

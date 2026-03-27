@@ -1,0 +1,14 @@
+release/gtest-all.o
+release/main.o
+release/tst.o
+release/recursionVar1.o
+release/iteration.o
+release/datamanager.o
+release/doptask.o
+release/tst1.o
+release/tst2.o
+release/tst3.o
+release/moc_recursionVar1.o
+release/moc_datamanager.o
+release/moc_doptask.o
+release/moc_iteration.o
