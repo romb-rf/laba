@@ -1,0 +1,59 @@
+{
+    "classes": [
+        {
+            "className": "DopTask",
+            "lineNumber": 5,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 8,
+                    "name": "res",
+                    "notify": "resChanged",
+                    "read": "res",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "DopTask",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 15,
+                    "name": "resChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "n",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 13,
+                    "name": "calculate",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "doptask.h",
+    "outputRevision": 69
+}

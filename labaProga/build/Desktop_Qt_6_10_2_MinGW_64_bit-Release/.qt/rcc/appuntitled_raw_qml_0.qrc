@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="/qt/qml/untitled/">
+    <file alias="Main.qml">C:/Users/rombr/Desktop/laba/labaProga/Main.qml</file>
+    <file alias="CastomButton.qml">C:/Users/rombr/Desktop/laba/labaProga/CastomButton.qml</file>
+    <file alias="OutRes.qml">C:/Users/rombr/Desktop/laba/labaProga/OutRes.qml</file>
+    <file alias="Dop.qml">C:/Users/rombr/Desktop/laba/labaProga/Dop.qml</file>
+    <file alias="TreeView.qml">C:/Users/rombr/Desktop/laba/labaProga/TreeView.qml</file>
+  </qresource>
+</RCC>
+

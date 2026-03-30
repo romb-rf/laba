@@ -1,0 +1,10 @@
+module untitled
+typeinfo appuntitled.qmltypes
+prefer :/qt/qml/untitled/
+Main 254.0 Main.qml
+CastomButton 254.0 CastomButton.qml
+OutRes 254.0 OutRes.qml
+Dop 254.0 Dop.qml
+TreeView 254.0 TreeView.qml
+depends QtQuick
+
