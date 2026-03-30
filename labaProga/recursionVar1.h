@@ -2,6 +2,7 @@
 #define RECURSIONVAR1_H
 #include <Qobject>
 #include <QDebug>
+#include "treenode.h"
 using namespace std;
 
 class Test : public QObject
@@ -15,11 +16,13 @@ public:
     int result() const {return m_result;}
     int callCnt() const {return m_callCnt;}
     int cnt() const {return m_cnt;}
+    // Q_INVOKABLE TreeNode* buildTree(int n, int funcIndex);
 
 public slots:
     void onComboIndexChanged(int n);
     void calculate(int n);
     void reset();
+    TreeNode* buildTree(int n, int funcIndex);
 
 signals:
     void resultChanged();
@@ -36,6 +39,8 @@ private:
     int m_result;
     int m_callCnt;
     int m_cnt;
+    TreeNode* buildTreeVar1(int n);
+    TreeNode* buildTreeVar2(int n);
 };
 
 #endif

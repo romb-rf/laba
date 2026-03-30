@@ -67,3 +67,65 @@ int Test::recursionFuncVar2(int n)
     }
     return 0;
 }
+TreeNode* Test::buildTree(int n, int funcIndex) {
+    if (n > 50) {
+        qWarning() << "Слишком большое n, дерево обрезано до 20";
+        n = 50;
+    }
+    if (funcIndex == 0)
+        return buildTreeVar1(n);
+    else
+        return buildTreeVar2(n);
+}
+
+TreeNode* Test::buildTreeVar1(int n) {
+    if (n <= 1) {
+        return new TreeNode(n, 1);
+    }
+
+    if (n > 1 && n % 2 != 0) {
+        TreeNode* left = buildTreeVar1(n - 1);
+        TreeNode* right = buildTreeVar1(2);
+        long long res = 4 * n + left->result() - right->result();
+        TreeNode* node = new TreeNode(n, res);
+        node->appendChild(left);
+        node->appendChild(right);
+        return node;
+    }
+
+    if (n > 1 && n % 2 == 0) {
+        TreeNode* child = buildTreeVar1(n - 1);
+        long long res = 3 * child->result();
+        TreeNode* node = new TreeNode(n, res);
+        node->appendChild(child);
+        return node;
+    }
+
+    return new TreeNode(n, 0);
+}
+
+TreeNode* Test::buildTreeVar2(int n) {
+    if (n == 1) {
+        return new TreeNode(n, 1);
+    }
+    if (n == 2) {
+        return new TreeNode(n, 2);
+    }
+    if (n > 2 && n % 2 == 0) {
+        TreeNode* child = buildTreeVar2(n - 3);
+        long long res = (7 * n + child->result()) / 9;
+        TreeNode* node = new TreeNode(n, res);
+        node->appendChild(child);
+        return node;
+    }
+    if (n > 2 && n % 2 != 0) {
+        TreeNode* left = buildTreeVar2(n - 1);
+        TreeNode* right = buildTreeVar2(n - 2);
+        long long res = (5 * n + left->result() + right->result()) / 7;
+        TreeNode* node = new TreeNode(n, res);
+        node->appendChild(left);
+        node->appendChild(right);
+        return node;
+    }
+    return new TreeNode(n, 0);
+}

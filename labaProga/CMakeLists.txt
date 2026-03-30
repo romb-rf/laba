@@ -30,6 +30,8 @@ qt_add_qml_module(appuntitled
         SOURCES intvalidator.h intvalidator.cpp
         SOURCES doptask.h doptask.cpp
         QML_FILES Dop.qml
+        SOURCES treenode.h treenode.cpp
+        QML_FILES TreeView.qml
 
 
 

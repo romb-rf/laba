@@ -2,6 +2,8 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
+import MyApp 1.0
+
 
 ApplicationWindow {
     id: mainWindow
@@ -255,21 +257,7 @@ ApplicationWindow {
                             font.pixelSize: 16
                         }
 
-                        // Text {
-                        //     text: "Память"
-                        //     color: "#7f8c8d"
-                        //     font.pixelSize: 15
-                        // }
-                        // Text {
-                        //     text: "1008 B (Stack)"
-                        //     color: "#2c3e50"
-                        //     font.pixelSize: 16
-                        // }
-                        // Text {
-                        //     text: "560 B (Heap)"
-                        //     color: "#2c3e50"
-                        //     font.pixelSize: 16
-                        // }
+
                     }
                 }
             }
@@ -287,30 +275,66 @@ ApplicationWindow {
                     samples: 24
                     color: "#1e000000"
                 }
-                Rectangle {
-                    width: 400
-                    height: 70
-                    anchors.centerIn: parent
 
-                    radius: 16
-                    layer.enabled: true
+                    RowLayout {
+                            anchors.centerIn: parent
+                            spacing: 10
+                            Rectangle {
+                                width: 400
+                                height: 70
+                                // anchors.centerIn: parent
 
-                    CastomButton{
-                        anchors.centerIn: parent
-                        text: "Доп Задание"
-                        fontSize: 28
-                        fontBold: true
-                        textColor: "black"
-                        onClicked: {
-                            if (secondWindowLoader.item) {
-                                var window = secondWindowLoader.item
-                                window.show()
-                                window.raise()
+                                radius: 16
+                                layer.enabled: true
+
+                                CastomButton{
+                                    anchors.centerIn: parent
+                                    text: "Доп Задание"
+                                    fontSize: 28
+                                    fontBold: true
+                                    textColor: "black"
+                                    onClicked: {
+                                        if (secondWindowLoader.item) {
+                                            var window = secondWindowLoader.item
+                                            window.show()
+                                            window.raise()
+                                        }
+                                    }
+                                }
                             }
+                            Rectangle {
+                                width: 400
+                                height: 70
+                                // anchors.centerIn: parent
+
+                                radius: 16
+                                layer.enabled: true
+
+                                CastomButton{
+                                    anchors.centerIn: parent
+                                    text: "Построить дерево"
+                                    fontSize: 28
+                                    fontBold: true
+                                    textColor: "black"
+                                    onClicked: {
+                                        var tree = recVar.buildTree(dataM.userInput, comboBox.currentIndex)
+                                        if (tree) {
+                                            var component = Qt.createComponent("TreeView.qml")
+                                            if (component.status === Component.Ready) {
+                                                var win = component.createObject(null, {rootNode: tree})
+                                                win.closing.connect(function() { tree.destroy() })
+                                                win.show()
+                                            } else {
+                                                console.log("Error loading TreeViewer.qml")
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
                         }
-                    }
                 }
-            }
+
             Item { Layout.fillHeight: true }
         }
     }
